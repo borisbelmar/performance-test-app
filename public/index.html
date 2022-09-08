@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>App Performance</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+  </head>
+  <body>
+    <main class="min-h-screen w-full flex flex-col">
+      <div class="bg-gray-900 text-white text-center py-4">
+        <h1 class="text-2xl font-bold">App Performance</h1>
+      </div>
+      <div class="mx-auto w-full max-w-[540px] px-8">
+        <div class="text-gray-900 text-center py-4">
+          <h1 class="text-xl transition-all duration-75" id="STRESS_STATUS_TEXT">Stress Test Status</h1>
+        </div>
+        <fieldset>
+          <legend class="text-lg font-medium text-gray-900">Options</legend>
+          <div class="mt-4 divide-y divide-gray-200 border-t border-b border-gray-200">
+            <div class="relative flex items-start py-4">
+              <div class="min-w-0 flex-1 text-sm">
+                <label for="CB_TICK_RENDER" class="select-none font-medium text-gray-700">Enable Tick Render</label>
+              </div>
+              <div class="ml-3 flex h-5 items-center">
+                <input id="CB_TICK_RENDER" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
+              </div>
+            </div>
+            <div class="relative flex items-start py-4">
+              <div class="min-w-0 flex-1 text-sm">
+                <label for="CB_REQUEST_TEST" class="select-none font-medium text-gray-700">Enable Request Test</label>
+              </div>
+              <div class="ml-3 flex h-5 items-center">
+                <input id="CB_REQUEST_TEST" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
+              </div>
+            </div>
+            <div class="relative flex items-start py-4">
+              <div class="min-w-0 flex-1 text-sm">
+                <label for="CB_ANIMATION_TEST" class="select-none font-medium text-gray-700">Enable Animation Test</label>
+              </div>
+              <div class="ml-3 flex h-5 items-center">
+                <input id="CB_ANIMATION_TEST" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
+              </div>
+            </div>
+          </div>
+        </fieldset>
+        <div id="ANIMATION_TEST_CONTAINER" class="py-16 hidden flex gap-8 justify-between">
+          <div class="w-16 h-16 transition animate-spin bg-indigo-500"></div>
+          <div class="w-16 h-16 transition animate-ping bg-indigo-500"></div>
+          <div class="w-16 h-16 transition animate-bounce bg-indigo-500"></div>
+        </div>
+        <div class="flex text-center w-full items-center justify-center my-4 gap-2">
+          <button
+            type="button"
+            id="STRESS_START_BTN"
+            class="inline-flex items-center rounded-md border border-transparent bg-indigo-600 px-3 py-2 text-sm font-medium leading-4 text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            Start Stress Test
+          </button>
+          <button
+            type="button"
+            id="STRESS_STOP_BTN"
+            disabled
+            class="inline-flex items-center rounded-md border border-transparent bg-indigo-600 px-3 py-2 text-sm font-medium leading-4 text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            Stop Stress Test
+          </button>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
